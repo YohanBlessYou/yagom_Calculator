@@ -32,6 +32,8 @@ struct ResultButtonHandler: ButtonActionDelegate {
         case .success(var formula):
             calculationResult = formula.result()
         default:
+            viewController.valueLabel.text = "NaN"
+            viewController.currentPhase = .phase4
             return
         }
 
